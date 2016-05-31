@@ -24,17 +24,6 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #AA3939 0%, #226666 51%);
-    background-image:-webkit-linear-gradient(top, #AA3939 0%, #226666 51%);
-    background-image:-ms-linear-gradient(top, #AA3939 0%, #226666 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #AA3939),
-        color-stop(0.51, #226666)
-    );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -43,6 +32,16 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
+    text-align: center;
+}
+
+/*fonts r cool*/
+@font-face {
+    font-family: 'flottflottregular';
+    src: url('fonts/Flottflott.ttf');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 /* Portrait layout (default) */
@@ -70,24 +69,44 @@ body {
 }
 
 h1 {
-    font-size:24px;
+    font-family:"flottflottregular";
+    font-size:36px;
     font-weight:normal;
     margin:0px;
     overflow:visible;
     padding:0px;
     text-align:center;
+    text-transform: none !important;
+    color: #ffffff;
 }
 
-.button {
+h3 {
+    font-size:18px;
+    font-weight:normal;
+    margin:8px;
+    overflow:visible;
+    padding:0px;
+    text-transform: none !important;
+}
+
+#bigYellowButton {
     background-color: #ffcc00; /* yellow */
     border: none;
-    color: white;
+    color:#000000;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border-radius: 15px;
+    margin-top: 16px;
+}
+
+#headerBar {
+    height: 40px;
+    background: #226666;
+    padding-top: 4px;
+    margin-top: 20px;
 }
 
 .event {
