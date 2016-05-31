@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <!--styles-->
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <!--end styles-->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <title>Login</title>
-    </head>
-    <body>
-    <!--<div class="app">-->
-        <div id="headerBar"><h1>Lunch Line</h1></div>
-        <form>
-            <Input type="text" name="name" placeholder="Name"/>
-            <br>
-            <Input type="text" name="money" placeholder="Money per week"/>
-        </form>
-        <form action="homePage.html">
-            <button type="submit" name="enter">Enter</button>
-        </form>
-    <!--</div>-->
-    </body>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <!--styles-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--end styles-->
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <!--header, DO NOT CHANGE-->
+    <div id="headerBar"><h1>Lunch Line</h1></div>
+
+    <!--form for user input-->
+    <form>
+        <Input type="text" name="name" placeholder="Name"/>
+        <br>
+        <Input type="text" name="money" placeholder="Money per week"/>
+    </form>
+
+    <!--submit button, currently only links to the homePage-->
+    <form action="homePage.html">
+        <button type="submit" name="enter">Enter</button>
+    </form>
+</body>
 </html>
