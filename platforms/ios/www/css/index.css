@@ -80,6 +80,11 @@ h1 {
     color: #ffffff;
 }
 
+h2 {
+    text-align:left;
+    margin-left: 16px;
+}
+
 h3 {
     font-size:18px;
     font-weight:normal;
@@ -100,6 +105,18 @@ h3 {
     font-size: 16px;
     border-radius: 15px;
     margin-top: 16px;
+}
+
+#suggestionCard {
+    margin:16px;
+    border: solid;
+    border-width: 4px;
+    /*border-radius: 4px;*/
+    border-color: #226666;
+}
+
+#suggestionImage {
+    width: 100%;
 }
 
 #headerBar {

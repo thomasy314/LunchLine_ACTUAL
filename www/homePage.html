@@ -13,18 +13,28 @@
 
     <!--"feed me" button, leads to personalized suggestions-->
     <form action="suggestion.html">
-        <button class="button" id="bigYellowButton" onclick="storeInput()">Feed Me!</button>
+        <button class="button" type="submit" id="bigYellowButton" onclick="storeInput()">Feed Me!</button>
     </form>
 
-    <!--user variables for suggestions-->
+    <!--user variables for suggestions, only allows users to input numbers-->
     <h3>Time you have for lunch:</h3>
-    <input type='text' placeholder='minutes' id='userMinutes'/>
+    <input type='text' placeholder='minutes' id='userMinutes' onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
 
     <h3>What is your maximum budget?:</h3>
-    <input type='text' placeholder='dollars' id='userDollars'/>
+    <input type='text' placeholder='dollars' id='userDollars' onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
 
     <h3>How far are you willing to travel?:</h3>
-    <input type='text' placeholder='blocks' id='userBlocks'/>
+    <input type='text' placeholder='blocks' id='userBlocks' onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
 
+    <!--Priorities-->
+    <h3>What is most important to you?</h3>
+
+    <div align="left" style="display:inline-block; margin:0 auto;">
+        <form action="" style="text-transform: none !important;">
+            <input type="radio" name="preference" value="time" id="pref1">Time<br>
+            <input type="radio" name="preference" value="money" id="pref2">Money<br>
+            <input type="radio" name="preference" value="distance" id="pref3">Distance
+        </form>
+    </div>
 </body>
 </html>
