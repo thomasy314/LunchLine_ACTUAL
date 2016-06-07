@@ -24,17 +24,6 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -43,12 +32,22 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
+    text-align: center;
+}
+
+/*fonts r cool*/
+@font-face {
+    font-family: 'flottflottregular';
+    src: url('fonts/Flottflott.ttf');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
+    /*background:url(../img/logo.png) no-repeat center top;  170px x 200px */
+    position:relative;             /* position in the center of the screen */
     left:50%;
     top:50%;
     height:50px;                   /* text area height */
@@ -70,12 +69,63 @@ body {
 }
 
 h1 {
-    font-size:24px;
+    font-family:"flottflottregular";
+    font-size:36px;
     font-weight:normal;
     margin:0px;
     overflow:visible;
     padding:0px;
     text-align:center;
+    text-transform: none !important;
+    color: #ffffff;
+}
+
+h2 {
+    text-align:left;
+    margin-left: 16px;
+    margin-top:2px;
+    margin-bottom:2px;
+}
+
+h3 {
+    font-size:18px;
+    font-weight:normal;
+    margin:4px;
+    overflow:visible;
+    padding:0px;
+    text-transform: none !important;
+}
+
+#bigYellowButton {
+    background-color: #ffcc00; /* yellow */
+    border: none;
+    color:#000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    margin-top: 16px;
+}
+
+#suggestionCard {
+    margin:16px;
+    border: solid;
+    border-width: 4px;
+    /*border-radius: 4px;*/
+    border-color: #226666;
+}
+
+#suggestionImage {
+    width: 100%;
+}
+
+#headerBar {
+    height: 40px;
+    background: #226666;
+    padding-top: 4px;
+    margin-top: 20px;
 }
 
 .event {
