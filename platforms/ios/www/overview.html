@@ -17,21 +17,26 @@
         <p style="color: #595959; text-align: left; margin-left: 16px">$$ | 0.3 miles</p>
         <p style="text-align: left; margin-left: 16px; margin-right: 16px; text-transform: none !important;" id="description"></p>
 
-        <div id="map"></div>
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+        <div style='overflow:hidden;height:200px;width:100%;'>
+            <div id='gmap_canvas' style='height:200px;width:100%;'></div>
+            <div>
+                <small>
+                    <a href="http://embedgooglemaps.com">embed google maps</a>
+                </small>
+            </div>
+            <div>
+                <small>
+                    <a href="https://termsofusegenerator.net">terms of use example</a>
+                </small>
+            </div>
+            <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+        </div>
+
         <script>
-            function initMap() {
-                var mapDiv = document.getElementById('map');
-                var map = new google.maps.Map(mapDiv, {
-                    center: {lat: 37.8715959, lng: -122.2692691},
-                    zoom: 14
-                });
-            }
+            newSuggestion();
+            init_map();
         </script>
-        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-                async defer></script>
-        <form>
-            <input type="button" onClick="history.go(0)" value="New Restaurant (TEMPORARY)">
-        </form>
 
     </body>
 </html>

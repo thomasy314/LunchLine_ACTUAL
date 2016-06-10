@@ -34,16 +34,26 @@ var address = [
     '2366 Telegraph Ave',
     '2045 Shattuck Ave',
     '2272 Shattuck Ave'
-]
+];
 
-var coordinates = [
-    '37.8702719,-122.2666115',
-    ''
-]
+var xCoordinates = [
+    '37.8702719',
+    '37.8673838',
+    '37.8714201',
+    '37.8680072'
+
+];
+
+var yCoordinates = [
+    '-122.2666115',
+    '-122.2592312',
+    '-122.2676357',
+    '-122.2684179'
+];
+
+var index = Math.floor(Math.random() * names.length);
 
 function newSuggestion(){
-
-    var index = Math.floor(Math.random() * names.length);
 
     var suggestionImage = document.getElementById("suggestionImage");
     suggestionImage.setAttribute("src", "img/" + images[index] + ".jpg");
@@ -63,22 +73,22 @@ function newSuggestion(){
 }
 
 function init_map(){
+
+    var x = xCoordinates[index];
+    var y = yCoordinates[index];
+
     var myOptions = {
-        zoom:15,center:new google.maps.LatLng(37.8680072,-122.2684179), mapTypeId: google.maps.MapTypeId.ROADMAP
+        zoom:15,center:new google.maps.LatLng(x,y), mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
     marker = new google.maps.Marker({
-        map: map,position: new google.maps.LatLng(37.8680072,-122.2684179)
+        map: map,position: new google.maps.LatLng(x,y)
     });
     infowindow = new google.maps.InfoWindow({
-        content:'<strong>Toss</strong><br>2272 Shattuck Ave<br>'
+        content:'<strong>names[index]</strong><br>address[index]<br>'
     });
     google.maps.event.addListener(marker, 'click', function(){
         infowindow.open(map,marker);
     });
     infowindow.open(map,marker);
 }google.maps.event.addDomListener(window, 'load', init_map);
-
-window.onload = function(){
-    newSuggestion();
-};

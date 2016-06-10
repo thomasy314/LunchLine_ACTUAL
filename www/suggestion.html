@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!--<meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="js/suggestions_main.js"></script>
     <link rel='stylesheet' type='text/css' href='css/index.css'>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">-->
+    <link rel='stylesheet' type='text/css' href='css/index.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/suggestions_main.js">
+
+    </script>
+
     <title>Suggestions</title>
 </head>
 <body>
@@ -15,15 +25,15 @@
     <a href = "overview.html">
         <div id="suggestionCard">
             <img id="suggestionImage" src="">
-            <h2 id="restoName"></h2>
-            <p style="color: #595959; text-align: left; margin-left: 16px" id="foodType"></p>
-            <p style="color: #595959; text-align: left; margin-left: 16px">$$ | 0.3 miles</p>
+            <h2 id="name"></h2>
+            <p style="color: #595959; text-align: left; margin-left: 16px" id="price"></p>
+            <p style="color: #595959; text-align: left; margin-left: 16px" id="distance"></p>
+            <p style="color: #595959; text-align: left; margin-left: 16px" id="rating"></p>
+            <p style="color: #595959; text-align: left; margin-left: 16px" id="line"></p>
         </div>
     </a>
 
-    <form>
-        <input type="button" onClick="history.go(0)" value="Dismiss" id="bigYellowButton">
-    </form>
+    <button id="bigYellowButton" onclick="changeRestaurant()">New Suggestion</button>
 
 </body>
 </html>

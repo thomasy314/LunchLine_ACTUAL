@@ -27,11 +27,26 @@ var restoDescription = [
     'Though quite a ways from school, the food this restaurant serves is delicious. Recommended for students with time in their hands.',
     'Saigon Express serves some great Vietnamese food for near-bottom dollar. If you\'re in a hurry, grab a tasty $5 sandwich.',
     'One of the most popular stops for students, this restaurant is ideal if you have enough money but don\'t feel like going too far from school. Service might be a bit slow.'
+];
+
+var address = [
+    '2154 Center St',
+    '2366 Telegraph Ave',
+    '2045 Shattuck Ave',
+    '2272 Shattuck Ave'
 ]
 
-function newSuggestion(){
+var coordinates = [
+    '37.8702719,-122.2666115',
+    '37.8673838,-122.2592312',
+    '37.8714201,-122.2676357',
+    '37.8680072,-122.2684179'
 
-    var index = Math.floor(Math.random() * names.length);
+]
+
+var index = Math.floor(Math.random() * names.length);
+
+function newSuggestion(){
 
     var suggestionImage = document.getElementById("suggestionImage");
     suggestionImage.setAttribute("src", "img/" + images[index] + ".jpg");
@@ -50,6 +65,19 @@ function newSuggestion(){
 
 }
 
-window.onload = function(){
-    newSuggestion();
-};
+function init_map(){
+    var myOptions = {
+        zoom:15,center:new google.maps.LatLng(coordinates[index]), mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+    marker = new google.maps.Marker({
+        map: map,position: new google.maps.LatLng(coordinates[index])
+    });
+    infowindow = new google.maps.InfoWindow({
+        content:'<strong>names[index]</strong><br>address[index]<br>'
+    });
+    google.maps.event.addListener(marker, 'click', function(){
+        infowindow.open(map,marker);
+    });
+    infowindow.open(map,marker);
+}google.maps.event.addDomListener(window, 'load', init_map);
