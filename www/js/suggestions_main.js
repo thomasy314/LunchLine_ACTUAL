@@ -4,6 +4,14 @@
 
 //initializes array of restaurants
 var restaurants = [];
+user = {
+    price : 0,
+    distance : 0,
+    line : 0,
+    rating : 0,
+    name : "Dave",
+    mostImportant : "price"
+};
 
 //var user = {};
 
@@ -156,34 +164,38 @@ function getWant(restaurantIn, mostImportant){
         }else{
             restaurant = user;
         }
-        want = Math.pow(parseFloat(restaurant.price), 2) + parseFloat(restaurant.distance) + parseFloat(5 - restaurant.rating) + parseFloat(restaurant.line);
-        if (mostImportant == "price") {
-            //want = Math.pow(parseFloat(restaurant.price), 3) + Math.pow(restaurant.distance) + (5 - Math.pow(restaurant.rating)) + Math.pow(restaurant.line);
-        } else if (mostImportant == "distance") {
 
+        if (mostImportant == "price") {
+            want = Math.pow(parseFloat(restaurant.price), 2) + parseFloat(restaurant.distance) + parseFloat(5 - restaurant.rating) + parseFloat(restaurant.line);
+        } else if (mostImportant == "distance") {
+            want = Math.pow(parseFloat(restaurant.distance), 2) + parseFloat(restaurant.price) + parseFloat(5 - restaurant.rating) + parseFloat(restaurant.line);
         } else if (mostImportant == "rating") {
+            want = Math.pow(parseFloat(restaurant.rating), 2) + parseFloat(restaurant.distance) + parseFloat(5 - restaurant.price) + parseFloat(restaurant.line);
         } else if (mostImportant = "line") {
+            want = Math.pow(parseFloat(restaurant.line), 2) + parseFloat(restaurant.distance) + parseFloat(5 - restaurant.rating) + parseFloat(restaurant.price);
         }
         //want = Math.round(parseFloat(want));
-        console.log(want + " || " + restaurant.name);
+        //console.log(want + " || " + restaurant.name);
 
     });
-    //console.log("Thing1 " + want + " || " + restaurantIn + " ||=========================================>");
+
 
     return want;
 }
 
 //get user info
 function getUserInfo(){
-    console.log("Working" + user.price);
-    /*user.price = price;
-    console.log(user.price + " Price");
-    user.distance = distance;
-    console.log(user.distance + " Distance");
-    user.line = line;
-    console.log(user.line + " Line");
-    user.rating = rating;[]
-    console.log(user.rating + " Rating");*/
+    user.price = getParameterByName('price');
+    user.distance = getParameterByName('distance');
+    user.line = getParameterByName('line');
+    user.rating = getParameterByName('rating');
+    user.name = getParameterByName('name');
+    //user.mostImportant = getParameterByName("mostImportant");
+    console.log("price" + user.price);
+    console.log("distance" + user.distance);
+    console.log("line" + user.line);
+    console.log("rating" + user.rating);
+    console.log("name" + user.name);
 }
 
 //print rest names
@@ -262,3 +274,13 @@ function test(){
 
 
 $("#bigYellowButton").on("click", getRestaurantInfo);
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
